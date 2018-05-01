@@ -16,29 +16,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ViewListContents"/>
-        <activity android:name=".ViewShoppingList"/>
+        <activity android:name=".ViewListContents" />
+        <activity android:name=".ViewShoppingList" />
         <activity android:name=".Register" />
         <activity
             android:name=".Homepage"
             android:label="@string/title_activity_homepage"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Settings" />
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Homepage"/>
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".Homepage" />
+
         <activity android:name=".ShoppingList" />
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Homepage"/>
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".Homepage" />
+
         <activity android:name=".Inventory" />
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Homepage"/>
-        <activity android:name=".Expenses"></activity>
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Homepage"/>
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".Homepage" />
+
+        <activity android:name=".Expenses" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".Homepage" />
+
+        <activity android:name=".EditShoppingList" />
+        <activity android:name=".EditInventory"></activity>
     </application>
 
 </manifest>
