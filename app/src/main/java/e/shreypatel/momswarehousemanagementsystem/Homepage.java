@@ -24,14 +24,8 @@ public class Homepage extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -85,10 +79,7 @@ public class Homepage extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.settings) {
-            Intent i = new Intent(Homepage.this, Settings.class);
-            startActivity(i);
-        } else if (id == R.id.list) {
+        if (id == R.id.list) {
             Intent i = new Intent(Homepage.this, ShoppingList.class);
             startActivity(i);
         } else if (id == R.id.inventory) {
