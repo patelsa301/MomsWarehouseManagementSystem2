@@ -16,56 +16,36 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 
-public class ShoppingListTest {
+public class ViewShoppingListTest {
 
     @Rule
     public final ActivityRule<ShoppingList> main = new ActivityRule<>(ShoppingList.class);
 
     @Test
-    public void testEnteringShoppingList()
-    {
+    public void testSearchList() {
         ViewInteraction appCompatEditText = onView(
                 allOf(withId(R.id.TFAddList), isDisplayed()));
-        appCompatEditText.perform(replaceText("toilet paper"), closeSoftKeyboard());
-    }
-
-    @Test
-    public void testEnteringShoppingListQuant()
-    {
-        ViewInteraction appCompatEditText = onView(
+        appCompatEditText.perform(replaceText("cheese"), closeSoftKeyboard());
+        ViewInteraction appCompatEditText2 = onView(
                 allOf(withId(R.id.quant_List), isDisplayed()));
-        appCompatEditText.perform(replaceText("10"), closeSoftKeyboard());
-    }
-
-    @Test
-    public void testAddListButtonExists()
-    {
+        appCompatEditText2.perform(replaceText("5"), closeSoftKeyboard());
         ViewInteraction appCompatButton = onView(
                 allOf(withId(R.id.bAddList), withText("Add Item To Shopping List"), isDisplayed()));
         appCompatButton.perform(click());
-    }
-
-    @Test
-    public void testViewListButtonExists()
-    {
-        ViewInteraction appCompatButton = onView(
+        ViewInteraction appCompatButton2 = onView(
                 allOf(withId(R.id.bViewList), withText("View Shopping List"), isDisplayed()));
-        appCompatButton.perform(click());
+        appCompatButton2.perform(click());
+        ViewInteraction appCompatEditText3 = onView(
+                allOf(withId(R.id.searchFilter), isDisplayed()));
+        appCompatEditText3.perform(replaceText("cheese"), closeSoftKeyboard());
     }
 
     @Test
-    public void testReturnButtonExists()
+    public void testHomepageButtonExists()
     {
         ViewInteraction appCompatButton = onView(
                 allOf(withId(R.id.btnHomepage), withText("Return to Homepage"), isDisplayed()));
         appCompatButton.perform(click());
     }
 
-    @Test
-    public void testList()
-    {
-        testEnteringShoppingList();
-        testAddListButtonExists();
-        testViewListButtonExists();
-    }
 }

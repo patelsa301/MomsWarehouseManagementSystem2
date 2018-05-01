@@ -16,36 +16,33 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 
-public class InventoryTest {
+public class ViewInventoryTest {
 
     @Rule
     public final ActivityRule<Inventory> main = new ActivityRule<>(Inventory.class);
 
     @Test
-    public void testAddingItem()
-    {
+    public void testSearchInv() {
         ViewInteraction appCompatEditText = onView(
                 allOf(withId(R.id.editText2), isDisplayed()));
         appCompatEditText.perform(replaceText("cheese"), closeSoftKeyboard());
-    }
-
-    @Test
-    public void testAddItemButtonExists()
-    {
         ViewInteraction appCompatButton = onView(
                 allOf(withId(R.id.bAddItem), withText("Add Item To Inventory"), isDisplayed()));
         appCompatButton.perform(click());
+        ViewInteraction appCompatButton2 = onView(
+                allOf(withId(R.id.bViewInv), withText("View Inventory"), isDisplayed()));
+        appCompatButton2.perform(click());
+        ViewInteraction appCompatEditText3 = onView(
+                allOf(withId(R.id.searchInv), isDisplayed()));
+        appCompatEditText3.perform(replaceText("cheese"), closeSoftKeyboard());
     }
 
     @Test
-    public void testViewItemsButtonExists()
+    public void testHomepageButtonExists()
     {
         ViewInteraction appCompatButton = onView(
-                allOf(withId(R.id.bViewInv), withText("View Inventory"), isDisplayed()));
+                allOf(withId(R.id.btnHomepageI), withText("Return to Homepage"), isDisplayed()));
         appCompatButton.perform(click());
     }
-
-
-
 
 }

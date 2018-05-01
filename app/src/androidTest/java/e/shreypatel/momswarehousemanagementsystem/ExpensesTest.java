@@ -16,36 +16,25 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 
-public class InventoryTest {
+public class ExpensesTest{
 
     @Rule
-    public final ActivityRule<Inventory> main = new ActivityRule<>(Inventory.class);
+    public final ActivityRule<Expenses> main = new ActivityRule<>(Expenses.class);
+
 
     @Test
-    public void testAddingItem()
-    {
-        ViewInteraction appCompatEditText = onView(
-                allOf(withId(R.id.editText2), isDisplayed()));
-        appCompatEditText.perform(replaceText("cheese"), closeSoftKeyboard());
-    }
-
-    @Test
-    public void testAddItemButtonExists()
+    public void testRefreshExp()
     {
         ViewInteraction appCompatButton = onView(
-                allOf(withId(R.id.bAddItem), withText("Add Item To Inventory"), isDisplayed()));
+                allOf(withId(R.id.btnExp), withText("Refresh Expenses"), isDisplayed()));
         appCompatButton.perform(click());
     }
 
     @Test
-    public void testViewItemsButtonExists()
+    public void testHomepageButtonExistsExp()
     {
         ViewInteraction appCompatButton = onView(
-                allOf(withId(R.id.bViewInv), withText("View Inventory"), isDisplayed()));
+                allOf(withId(R.id.btnReturnExp), withText("Return to Homepage"), isDisplayed()));
         appCompatButton.perform(click());
     }
-
-
-
-
 }
