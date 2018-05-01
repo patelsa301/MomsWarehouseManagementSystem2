@@ -1,17 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="e.shreypatel.momswarehousemanagementsystem.Expenses">
+    android:orientation="vertical"
+    tools:context="e.shreypatel.momswarehousemanagementsystem.Inventory">
+
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="EXPENSES"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="29dp" />
-</android.support.constraint.ConstraintLayout>
+        android:textSize="35dp"
+        android:gravity="center"
+        android:text="Total Expenses" />
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnExp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onExpensesClick"
+        android:text="Refresh Expenses" />
+
+    <Button
+        android:id="@+id/btnReturnExp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onReturnClick"
+        android:text="Return to Homepage" />
+
+
+</LinearLayout>

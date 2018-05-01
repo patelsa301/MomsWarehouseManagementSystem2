@@ -14,8 +14,25 @@
         android:layout_height="wrap_content"
         android:text="SHOPPING LIST" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name of Item" />
+
     <EditText
         android:id="@+id/TFAddList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quantity" />
+
+    <EditText
+        android:id="@+id/quant_List"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -41,6 +58,12 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.639" />
+
+    <Button
+        android:id="@+id/btnHomepage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Return to Homepage" />
 
 
 </LinearLayout>
